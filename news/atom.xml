@@ -13,5 +13,9 @@
         <link href="https://warewulf.hpcng.org/news/4.0.0"/>
         <updated>2021-02-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This is a placeholder for the announcement that will come with the first release of Warewulf v4]]></summary>
+        <author>
+            <name>Brian Clemens</name>
+            <uri>https://github.com/brianclemens</uri>
+        </author>
     </entry>
 </feed>
