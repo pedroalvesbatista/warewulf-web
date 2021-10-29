@@ -6,9 +6,8 @@ title: BSD Quickstart (OpenBSD, FreeBSD and NetBSD)
 ## Install Warewulf and dependencies
 
 ```bash
-sudo dnf groupinstall "Development Tools"
-sudo dnf install epel-release
-sudo dnf install golang tftp-server dhcp-server nfs-utils
+sudo pkg groupinstall "Development Tools"
+sudo pkg install golang tftp-server dhcp-server nfs-utils
 
 git clone https://github.com/hpcng/warewulf.git
 cd warewulf
@@ -16,16 +15,15 @@ make all
 sudo make install
 ```
 
-## Configure firewalld
+## Configure PF
 
 Restart firewalld to register the added service file, add the service to the default zone, and reload.
 
 ```bash
-sudo systemctl restart firewalld
-sudo firewall-cmd --permanent --add-service warewulf
-sudo firewall-cmd --permanent --add-service nfs
-sudo firewall-cmd --permanent --add-service tftp
-sudo firewall-cmd --reload
+sudo pf --add-service warewulf
+sudo pf --add-service nfs
+sudo pf --add-service tftp
+sudo pf reload
 ```
 
 ## Configure the controller
